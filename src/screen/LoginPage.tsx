@@ -1,10 +1,11 @@
 import { View, Text, TextInput, Button } from 'react-native'
 import React, { useState } from 'react'
+import AuthProvider from '../providers/AuthProvider'
 
 const LoginPage = () => {
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
-    const [loggedIn, setLoggedIn] = useState(false)
+    const [isLoggedIn, setLoggedIn] = useState(false)
 
 
     const handlelogin = () => {
@@ -55,7 +56,7 @@ const LoginPage = () => {
         <View className='flex-1 justify-center items-center gap-8'>
 
             {
-            loggedIn ?    
+            isLoggedIn ?    
 
             showmessagecomponent() : showlogincomponent()
 
@@ -67,6 +68,11 @@ const LoginPage = () => {
             
         
         </View>
+    )
+
+    return
+    (
+        <AuthProvider
     )
 }
 
